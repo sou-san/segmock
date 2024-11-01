@@ -8,6 +8,7 @@ from segmock.stopwatch import StopwatchScreen
 
 
 class Segmock(App[None]):
+    CSS_PATH = "app.tcss"
     ENABLE_COMMAND_PALETTE = False
     MODES = {
         "clock": ClockScreen,
