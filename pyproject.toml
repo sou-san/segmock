@@ -18,3 +18,10 @@ segmock = "segmock.__main__:main"
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.13.0",
+    "ruff>=0.7.1",
+    "textual-dev>=1.6.1",
+]
