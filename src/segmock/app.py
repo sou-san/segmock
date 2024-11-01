@@ -2,12 +2,9 @@ from textual.app import App
 from textual.binding import Binding
 from textual.events import Resize
 
-from segmock.blocking_screen import BlockingScreen
+from segmock.blocking_screen import MIN_HEIGHT, MIN_WIDTH, BlockingScreen
 from segmock.clock import ClockScreen
 from segmock.stopwatch import StopwatchScreen
-
-MIN_WIDTH = 158
-MIN_HEIGHT = 17
 
 
 class Segmock(App[None]):
