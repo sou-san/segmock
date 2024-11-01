@@ -71,7 +71,7 @@ class StopwatchScreen(Screen[None]):
         super().__init__()
 
     def compose(self) -> ComposeResult:
-        yield TimeDisplay(font="7segment")
+        yield TimeDisplay(font="font/7segment")
         yield Footer()
 
     def action_operate_timer(self) -> None:

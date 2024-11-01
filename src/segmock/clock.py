@@ -22,5 +22,5 @@ class ClockDisplay(FigletWidget):
 
 class ClockScreen(Screen[None]):
     def compose(self) -> ComposeResult:
-        yield ClockDisplay(font="7segment")
+        yield ClockDisplay(font="font/7segment")
         yield Footer()
