@@ -7,7 +7,10 @@ authors = [
     { name = "sou-san", email = "sou887867@gmail.com" }
 ]
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "textual>=0.85.1",
+    "textual-pyfiglet==0.5.0",
+]
 
 [project.scripts]
 segmock = "segmock.__main__:main"
