@@ -1,16 +1,16 @@
 [project]
 name = "segmock"
 version = "0.1.0"
-description = "Add your description here"
+description = "7 segment clock (segmock)"
 readme = "README.md"
 authors = [
     { name = "sou-san", email = "sou887867@gmail.com" }
 ]
-requires-python = ">=3.13"
+requires-python = ">=3.10"
 dependencies = []
 
 [project.scripts]
-segmock = "segmock:main"
+segmock = "segmock.__main__:main"
 
 [build-system]
 requires = ["hatchling"]
