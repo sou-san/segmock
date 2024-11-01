@@ -1,4 +1,5 @@
 import time
+from pathlib import Path
 
 from textual.app import ComposeResult
 from textual.binding import Binding
@@ -71,7 +72,10 @@ class StopwatchScreen(Screen[None]):
         super().__init__()
 
     def compose(self) -> ComposeResult:
-        yield TimeDisplay(font="font/7segment")
+        # uv build をすると src/segmock 内のディレクトリやファイルがビルドされて whl にまとめられるみたい。
+        # font を src/segmock に移動して、 pathlib で動的に相対パスを指定すると正常に動作するようになった。
+        font = Path(__file__).parent / "font" / "7segment"
+        yield TimeDisplay(font=str(font))
         yield Footer()
 
     def action_operate_timer(self) -> None:
