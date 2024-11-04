@@ -1,6 +1,7 @@
 from textual.app import App
 from textual.binding import Binding
 from textual.events import Resize
+from textual.widgets import Footer
 
 from segmock.blocking_screen import MIN_HEIGHT, MIN_WIDTH, BlockingScreen
 from segmock.clock import ClockScreen
@@ -17,6 +18,7 @@ class Segmock(App[None]):
     DEFAULT_MODE = "clock"
     BINDINGS = [
         Binding("q", "exit_app", "Exit"),
+        Binding("f", "toggle_footer_visibility", "Footer"),
         Binding("c", "app.switch_mode('clock')", "Clock"),
         Binding("s", "app.switch_mode('stopwatch')", "Stopwatch"),
     ]
@@ -27,3 +29,7 @@ class Segmock(App[None]):
 
     def action_exit_app(self) -> None:
         self.exit()
+
+    def action_toggle_footer_visibility(self) -> None:
+        footer = self.query_one(Footer)
+        footer.visible = not footer.visible
