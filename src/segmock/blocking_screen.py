@@ -5,12 +5,12 @@ from textual.events import Resize
 from textual.screen import ModalScreen
 from textual.widgets import Footer, Label
 
-MIN_WIDTH = 158
-MIN_HEIGHT = 17
+MIN_WIDTH: int = 158
+MIN_HEIGHT: int = 17
 
 
 class BlockingScreen(ModalScreen[None]):
-    BINDINGS = [Binding("q", "app.exit_app", "Exit")]
+    BINDINGS = [Binding("q", "app.quit", "Exit")]
 
     def compose(self) -> ComposeResult:
         width: int = self.app.size.width

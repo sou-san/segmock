@@ -17,7 +17,7 @@ class Segmock(App[None]):
     }
     DEFAULT_MODE = "clock"
     BINDINGS = [
-        Binding("q", "exit_app", "Exit"),
+        Binding("q", "quit", "Exit"),
         Binding("f", "toggle_footer_visibility", "Footer"),
         Binding("c", "app.switch_mode('clock')", "Clock"),
         Binding("s", "app.switch_mode('stopwatch')", "Stopwatch"),
@@ -26,9 +26,6 @@ class Segmock(App[None]):
     async def on_resize(self, event: Resize) -> None:
         if event.size.width < MIN_WIDTH or event.size.height < MIN_HEIGHT:
             self.push_screen(BlockingScreen())
-
-    def action_exit_app(self) -> None:
-        self.exit()
 
     def action_toggle_footer_visibility(self) -> None:
         footer = self.query_one(Footer)
