@@ -10,8 +10,8 @@ requires-python = ">=3.10"
 license = { file = "LICENSE" }
 keywords = ["segmock", "7segment", "clock", "stopwatch", "cli", "tui", "terminal", "simple", "tool"]
 dependencies = [
-    "textual>=0.85.1",
-    "textual-pyfiglet==0.5.0",
+    "textual>=0.88.1",
+    "textual-pyfiglet>=0.5.5",
 ]
 
 [project.urls]
