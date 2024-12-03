@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from textual.app import App
 from textual.binding import Binding
 from textual.events import Resize
@@ -9,7 +11,7 @@ from segmock.stopwatch import StopwatchScreen
 
 
 class Segmock(App[None]):
-    CSS_PATH = "app.tcss"
+    CSS_PATH = Path(__file__).parent / "app.tcss"
     ENABLE_COMMAND_PALETTE = False
     MODES = {
         "clock": ClockScreen,
