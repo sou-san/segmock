@@ -1,7 +1,7 @@
 [project]
 name = "segmock"
 version = "0.1.1"
-description = "7 segment clock (segmock)"
+description = "7-segment clock (segmock)"
 readme = "README.md"
 authors = [
     { name = "sou-san", email = "sou887867@gmail.com" }
