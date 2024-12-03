@@ -17,7 +17,7 @@ class Segmock(App[None]):
     }
     DEFAULT_MODE = "clock"
     BINDINGS = [
-        Binding("q", "quit", "Exit"),
+        Binding("q", "quit", "Quit"),
         Binding("f", "toggle_footer_visibility", "Footer"),
         Binding("c", "app.switch_mode('clock')", "Clock"),
         Binding("s", "app.switch_mode('stopwatch')", "Stopwatch"),
