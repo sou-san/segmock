@@ -1,4 +1,5 @@
 version = 1
+revision = 1
 requires-python = ">=3.10"
 
 [[package]]
@@ -136,7 +137,7 @@ name = "click"
 version = "8.1.7"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "colorama", marker = "platform_system == 'Windows'" },
+    { name = "colorama", marker = "sys_platform == 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz", hash = "sha256:ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de", size = 336121 }
 wheels = [
@@ -668,8 +669,8 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "textual", specifier = ">=0.88.1" },
-    { name = "textual-pyfiglet", specifier = ">=0.5.5" },
+    { name = "textual", specifier = ">=2.0.0,<3.0.0" },
+    { name = "textual-pyfiglet", specifier = "==0.5.5" },
 ]
 
 [package.metadata.requires-dev]
@@ -681,7 +682,7 @@ dev = [
 
 [[package]]
 name = "textual"
-version = "0.88.1"
+version = "2.1.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "markdown-it-py", extra = ["linkify", "plugins"] },
@@ -689,9 +690,9 @@ dependencies = [
     { name = "rich" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/a4/e8/76b3aa49dd2f83410ab78b5ab04d65fee095e4720d2811f9ef72f073d11f/textual-0.88.1.tar.gz", hash = "sha256:9c56d953dc7d1a8ddf06acc910d9224027e02416551f92920e70f435bd28e062", size = 1516320 }
+sdist = { url = "https://files.pythonhosted.org/packages/41/62/4af4689dd971ed4fb3215467624016d53550bff1df9ca02e7625eec07f8b/textual-2.1.2.tar.gz", hash = "sha256:aae3f9fde00c7440be00e3c3ac189e02d014f5298afdc32132f93480f9e09146", size = 1596600 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/4f/99/3e99a58f62426771a628a83de300588e0ec04383d76652afb2f944a46852/textual-0.88.1-py3-none-any.whl", hash = "sha256:f2db8ce892007f724dab57a2b791e55f9d7ce04d333c50fb4b6fb7f3990d4cec", size = 654912 },
+    { url = "https://files.pythonhosted.org/packages/07/81/9df1988c908cbba77f10fecb8587496b3dff2838d4510457877a521d87fd/textual-2.1.2-py3-none-any.whl", hash = "sha256:95f37f49e930838e721bba8612f62114d410a3019665b6142adabc14c2fb9611", size = 680148 },
 ]
 
 [[package]]
