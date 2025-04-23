@@ -25,6 +25,6 @@ repos:
       args: [--config-file=pyproject.toml, src]
       pass_filenames: false
       additional_dependencies: [
-        "textual>=2.0.0, <3.0.0",
+        "textual>=3.1.1, <4.0.0",
         "textual-pyfiglet==0.5.5",
       ]
