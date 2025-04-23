@@ -1,6 +1,6 @@
 [project]
 name = "segmock"
-version = "0.1.2"
+version = "0.2.0"
 description = "7-segment clock (segmock)"
 readme = "README.md"
 authors = [
