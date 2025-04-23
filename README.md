@@ -1,3 +1,7 @@
+![Python version](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue.svg)
+![PyPi version](https://img.shields.io/badge/pypi%20package-v0.1.2-green.svg)
+![OS support](https://img.shields.io/badge/OS-Linux%20%7C%20Windows-red.svg)
+
 # 7-segment clock (segmock)
 
 ![segmock_screenshot](https://github.com/user-attachments/assets/79055e60-2c06-4c55-9104-13f45ea2b4d9)
