@@ -8,7 +8,7 @@ from textual.widgets import Footer
 from textual_pyfiglet import FigletWidget
 
 
-class ClockDisplay(FigletWidget):
+class ClockWidget(FigletWidget):
     current_time: reactive[str] = reactive(time.strftime("%H:%M:%S"))
 
     def on_mount(self) -> None:
@@ -26,5 +26,5 @@ class ClockScreen(Screen[None]):
         # uv build をすると src/segmock 内のディレクトリやファイルがビルドされて whl にまとめられるみたい。
         # font を src/segmock に移動して、 pathlib で動的に相対パスを指定すると正常に動作するようになった。
         font = Path(__file__).parent / "font" / "7segment"
-        yield ClockDisplay(font=str(font))
+        yield ClockWidget(font=str(font))
         yield Footer()
