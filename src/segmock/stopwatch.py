@@ -10,7 +10,7 @@ from textual.widgets import Footer
 from textual_pyfiglet import FigletWidget
 
 
-class TimeDisplay(FigletWidget):
+class StopwatchWidget(FigletWidget):
     INIT_TIME: ClassVar[float] = 0.0
     MAX_TIME: ClassVar[float] = 35_999.9
     DECIMAL_PLACES: ClassVar[int] = 1
@@ -76,11 +76,11 @@ class StopwatchScreen(Screen[None]):
         # uv build をすると src/segmock 内のディレクトリやファイルがビルドされて whl にまとめられるみたい。
         # font を src/segmock に移動して、 pathlib で動的に相対パスを指定すると正常に動作するようになった。
         font = Path(__file__).parent / "font" / "7segment"
-        yield TimeDisplay(font=str(font))
+        yield StopwatchWidget(font=str(font))
         yield Footer()
 
     def action_operate_timer(self) -> None:
-        time_display: TimeDisplay = self.query_one(TimeDisplay)
+        time_display: StopwatchWidget = self.query_one(StopwatchWidget)
 
         if self.is_running_:
             time_display.stop()
@@ -90,6 +90,5 @@ class StopwatchScreen(Screen[None]):
             self.is_running_ = True
 
     def action_reset_time(self) -> None:
-        time_display: TimeDisplay = self.query_one(TimeDisplay)
-        time_display.reset()
+        self.query_one(StopwatchWidget).reset()
         self.is_running_ = False
