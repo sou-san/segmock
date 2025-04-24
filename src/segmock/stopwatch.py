@@ -28,7 +28,8 @@ class StopwatchWidget(FigletWidget):
     def update_time(self) -> None:
         self.time = self.total_time + (time.perf_counter() - self.start_time)
 
-    def _get_h_m_s(self, time: float) -> tuple[float, float, float]:
+    @staticmethod
+    def _get_h_m_s(time: float) -> tuple[float, float, float]:
         minutes, seconds = divmod(time, 60)
         hours, minutes = divmod(minutes, 60)
 
