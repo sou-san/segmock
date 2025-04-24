@@ -24,7 +24,7 @@ class BlockingScreen(ModalScreen[None]):
             yield Label(f"Current app screen size: {width}x{height}")
         yield Footer()
 
-    async def on_resize(self, event: Resize) -> None:
+    def on_resize(self, event: Resize) -> None:
         if (
             event.size.width >= MIN_WIDTH
             and event.size.height >= MIN_HEIGHT

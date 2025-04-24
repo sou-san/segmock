@@ -26,7 +26,7 @@ class Segmock(App[None]):
         Binding("s", "switch_mode('stopwatch')", "Stopwatch"),
     ]
 
-    async def on_resize(self, event: Resize) -> None:
+    def on_resize(self, event: Resize) -> None:
         if event.size.width < MIN_WIDTH or event.size.height < MIN_HEIGHT:
             self.push_screen(BlockingScreen())
 
