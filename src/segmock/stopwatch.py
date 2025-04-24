@@ -14,7 +14,7 @@ import segmock.cache
 
 class StopwatchWidget(FigletWidget):
     INIT_TIME: ClassVar[float] = 0.0
-    MAX_TIME: ClassVar[float] = 35_999.9
+    MAX_TIME: ClassVar[float] = 35_999.9  # 9:59:59.9
     DECIMAL_PLACES: ClassVar[int] = 1
 
     time: reactive[float] = reactive(INIT_TIME)
