@@ -5,7 +5,7 @@ from textual.app import ComposeResult
 from textual.binding import Binding
 from textual.reactive import reactive
 from textual.screen import Screen
-from textual.widgets._footer import Footer
+from textual.widgets import Footer
 from textual_pyfiglet import FigletWidget
 
 
