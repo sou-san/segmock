@@ -7,6 +7,8 @@ from textual.screen import Screen
 from textual.widgets import Footer
 from textual_pyfiglet import FigletWidget
 
+import segmock.cache
+
 
 class ClockWidget(FigletWidget):
     current_time: reactive[str] = reactive(time.strftime("%H:%M:%S"))
@@ -28,3 +30,6 @@ class ClockScreen(Screen[None]):
         font = Path(__file__).parent / "font" / "7segment"
         yield ClockWidget(font=str(font))
         yield Footer()
+
+    def on_screen_resume(self) -> None:
+        self.query_one(Footer).visible = segmock.cache.footer_visible

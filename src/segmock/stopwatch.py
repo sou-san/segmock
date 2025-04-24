@@ -9,6 +9,8 @@ from textual.screen import Screen
 from textual.widgets import Footer
 from textual_pyfiglet import FigletWidget
 
+import segmock.cache
+
 
 class StopwatchWidget(FigletWidget):
     INIT_TIME: ClassVar[float] = 0.0
@@ -93,3 +95,6 @@ class StopwatchScreen(Screen[None]):
     def action_reset_time(self) -> None:
         self.query_one(StopwatchWidget).reset()
         self.is_running_ = False
+
+    def on_screen_resume(self) -> None:
+        self.query_one(Footer).visible = segmock.cache.footer_visible

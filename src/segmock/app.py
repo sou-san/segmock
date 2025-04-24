@@ -5,6 +5,7 @@ from textual.binding import Binding
 from textual.events import Resize
 from textual.widgets import Footer
 
+import segmock.cache
 from segmock.blocking_screen import MIN_HEIGHT, MIN_WIDTH, BlockingScreen
 from segmock.clock import ClockScreen
 from segmock.stopwatch import StopwatchScreen
@@ -30,5 +31,5 @@ class Segmock(App[None]):
             self.push_screen(BlockingScreen())
 
     def action_toggle_footer_visibility(self) -> None:
-        footer = self.query_one(Footer)
-        footer.visible = not footer.visible
+        segmock.cache.footer_visible = not segmock.cache.footer_visible
+        self.screen.query_one(Footer).visible = segmock.cache.footer_visible
