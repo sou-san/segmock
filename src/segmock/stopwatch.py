@@ -1,5 +1,6 @@
 import time
 from pathlib import Path
+from typing import ClassVar
 
 from textual.app import ComposeResult
 from textual.binding import Binding
@@ -10,9 +11,9 @@ from textual_pyfiglet import FigletWidget
 
 
 class TimeDisplay(FigletWidget):
-    INIT_TIME: float = 0.0
-    MAX_TIME: float = 35_999.9
-    DECIMAL_PLACES: int = 1
+    INIT_TIME: ClassVar[float] = 0.0
+    MAX_TIME: ClassVar[float] = 35_999.9
+    DECIMAL_PLACES: ClassVar[int] = 1
 
     time: reactive[float] = reactive(INIT_TIME)
 
