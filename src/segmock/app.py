@@ -21,8 +21,8 @@ class Segmock(App[None]):
     BINDINGS = [
         Binding("q", "quit", "Quit"),
         Binding("f", "toggle_footer_visibility", "Footer"),
-        Binding("c", "app.switch_mode('clock')", "Clock"),
-        Binding("s", "app.switch_mode('stopwatch')", "Stopwatch"),
+        Binding("c", "switch_mode('clock')", "Clock"),
+        Binding("s", "switch_mode('stopwatch')", "Stopwatch"),
     ]
 
     async def on_resize(self, event: Resize) -> None:
