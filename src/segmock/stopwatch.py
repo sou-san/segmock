@@ -20,8 +20,8 @@ class StopwatchWidget(FigletWidget):
     time: reactive[float] = reactive(INIT_TIME)
 
     def on_mount(self) -> None:
-        self.start_time: float = 0.0
-        self.total_time: float = 0.0
+        self.start_time: float = self.INIT_TIME
+        self.total_time: float = self.INIT_TIME
 
         self.update_timer = self.set_interval(
             1 / (10**self.DECIMAL_PLACES + 10), self.update_time, pause=True
