@@ -4,6 +4,7 @@ from pathlib import Path
 from textual.app import ComposeResult
 from textual.reactive import reactive
 from textual.screen import Screen
+from textual.timer import Timer
 from textual.widgets import Footer
 from textual_pyfiglet import FigletWidget
 
@@ -14,7 +15,7 @@ class ClockWidget(FigletWidget):
     current_time: reactive[str] = reactive(time.strftime("%H:%M:%S"))
 
     def on_mount(self) -> None:
-        self.set_interval(1 / 24, self.update_time)
+        self.update_timer: Timer = self.set_interval(1 / 24, self.update_time)
 
     def update_time(self) -> None:
         self.current_time = time.strftime("%H:%M:%S")
@@ -33,3 +34,8 @@ class ClockScreen(Screen[None]):
 
     def on_screen_resume(self) -> None:
         self.query_one(Footer).visible = segmock.cache.footer_visible
+
+        self.query_one(ClockWidget).update_timer.resume()
+
+    def on_screen_suspend(self) -> None:
+        self.query_one(ClockWidget).update_timer.pause()

@@ -98,3 +98,9 @@ class StopwatchScreen(Screen[None]):
 
     def on_screen_resume(self) -> None:
         self.query_one(Footer).visible = segmock.cache.footer_visible
+
+        if self.is_running_:
+            self.query_one(StopwatchWidget).update_timer.resume()
+
+    def on_screen_suspend(self) -> None:
+        self.query_one(StopwatchWidget).update_timer.pause()
